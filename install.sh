@@ -2,6 +2,8 @@
 #==================================
 # Installation of Gesture Retrieval
 #----------------------------------
+CURDIR=`pwd`
+#
 echo ""
 echo "Cloning CDCL..."
 git clone https://github.com/kevinlin311tw/CDCL-human-part-segmentation.git
@@ -24,4 +26,4 @@ sudo docker build -t cdcl:v1 .
 #
 #
 echo "Running Docker..."
-sudo docker run --runtime=nvidia -v '/tank/Manuel/CDCL-human-part-segmentation':'/CDCL'   -it cdcl:v1 bash
+sudo docker run --runtime=nvidia -v $CURDIR'/CDCL-human-part-segmentation':'/CDCL'   -it cdcl:v1 bash
