@@ -16,7 +16,7 @@ echo "Fetching weights..."
 echo ""
 echo "Moving modified Python files to CDCL..."
 cp inference_15parts.py CDCL-human-part-segmentation/
-cp pascal_voc_human_seg_gt.py CDCL-human-part-segmentation/human_seg/
+cp human_seg_gt.py CDCL-human-part-segmentation/human_seg/
 #
 #
 echo "Creating folders for process chain..."
