@@ -318,7 +318,16 @@ def k_means_clustering (answer):
 
 
     # Here the k-means clustering gets done. It will be calculated, no matter what the answer of the console is
-    kmeans = KMeans(n_clusters=10, n_jobs=-1, random_state=22)
+    input_notok = True
+    n_clusters = 10
+    while input_notok:
+        try:
+            n_clusters = int(input("How many groups do you want to cluster? [e.g. 10]: "))
+            input_notok = False
+        except ValueError:
+            print("Sorry, only enter integers > 0!")
+
+    kmeans = KMeans(n_clusters=n_clusters, n_jobs=-1, random_state=22)
     kmeans.fit(feat)
 
     #print("K-Means labels are: ", kmeans.labels_)
@@ -386,9 +395,6 @@ def similarity_search (feature_vectors, model):
 
     example_image_feature_vector = model.predict(processed_image)
 
-    # /CDCL/input/01christ.jpg
-    # /CDCL/input/MonaLisa.jpg
-
     # The distance of the feature vectors between the example image and all the other feature vectors gets calculated
     # I use the cosine distance.
     for image_name in feature_vectors:
@@ -403,7 +409,16 @@ def similarity_search (feature_vectors, model):
     c = Counter(similarity_map)
 
     # In most_common the names of the top x nearest images get saved
-    most_common = dict(c.most_common(10))
+    input_notok = True
+    n_similar = 10
+    while input_notok:
+        try:
+            n_similar = int(input("How many similar images do you want to get? [e.g. 10]: "))
+            input_notok = False
+        except ValueError:
+            print("Sorry, only enter integers > 0!")
+
+    most_common = dict(c.most_common(n_similar))
 
     # Writing these images into their new directory. Parts of the name need to be trimmed since per default
     # CDCL adds a "seg_" at the beginning of the names and a ".jpg" at the end
@@ -451,7 +466,7 @@ if __name__ == '__main__':
     # »»————- example image and is mostly a copy of the part below. For documentation - see below————-««
     if answer == "yes" or answer == "y" or answer == "Y" or answer == "Yes":
         example_image_feature_vector = {}
-        print("Please enter path to example image:")
+        print("Please enter path to example image. A working test example would be: /CDCL/input/01christ.jpg")
         example_image = input()
 
         if example_image.endswith(".png") or example_image.endswith(".jpg"):
