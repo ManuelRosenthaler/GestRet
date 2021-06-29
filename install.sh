@@ -9,8 +9,12 @@ echo "Cloning CDCL..."
 git clone https://github.com/kevinlin311tw/CDCL-human-part-segmentation.git
 #
 #
-echo "Fetching weights..."
+echo "Fetching weights and cleanup..."
 (cd CDCL-human-part-segmentation; bash fetch_data.sh; rm output/*; rm input/*)
+#
+#
+echo unziping example image corpus
+unzip input.zip -d CDCL-human-part-segmentation
 #
 #
 echo ""
