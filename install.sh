@@ -10,7 +10,7 @@ git clone https://github.com/kevinlin311tw/CDCL-human-part-segmentation.git
 #
 #
 echo "Fetching weights..."
-(cd CDCL-human-part-segmentation; bash fetch_data.sh)
+(cd CDCL-human-part-segmentation; bash fetch_data.sh; rm output/*; rm input/*)
 #
 #
 echo ""
