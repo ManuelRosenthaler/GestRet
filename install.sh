@@ -9,6 +9,10 @@ echo "Cloning CDCL..."
 git clone https://github.com/kevinlin311tw/CDCL-human-part-segmentation.git
 #
 #
+echo "Fetching weights..."
+(cd CDCL-human-part-segmentation; bash fetch_data.sh)
+#
+#
 echo ""
 echo "Moving modified Python files to CDCL..."
 cp inference_15parts.py CDCL-human-part-segmentation/
