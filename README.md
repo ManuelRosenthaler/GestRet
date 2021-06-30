@@ -8,7 +8,7 @@ The image database, which is located in the input, was collected by Manuel Rosen
 ***All other files inside the folder CDCL belong to the authors of the CDCL***.
 
 ## Requirements
-**Docker** is the only requirement to run the installation file.
+**Docker** is the only requirement to run the installation file. Go to https://www.docker.com/ for more informations. 
 
 ## Installation process
 To install the gesture retrieval program you have to do the following steps:
