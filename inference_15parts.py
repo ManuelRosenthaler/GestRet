@@ -434,7 +434,7 @@ def similarity_search (feature_vectors, model):
 # =======================================================================================================================
 
 if __name__ == '__main__':
-
+    # »»————-I didnt change this part ☟ ————-««
     args = parser.parse_args()
     keras_weights_file = args.model
 
@@ -449,7 +449,7 @@ if __name__ == '__main__':
         scale_list.append(float(item))
 
     params['scale_search'] = scale_list
-
+    # »»————-I didnt change this part ☝︎ ————-««
     # This will get the input of the console. It checks if the user wants to do a similarity search or not.
     answer = ''
     print("Do you want to make a similarity search to search the database for one specific gesture? yes/no")
